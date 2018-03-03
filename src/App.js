@@ -7,6 +7,7 @@ import {
   subscribeToCounter,
   incrementCounter,
 } from './api';
+import Raceboard from './components/Raceboard';
 
 class App extends Component {
   constructor(props) {
@@ -38,6 +39,7 @@ class App extends Component {
             { this.state.timestamp }
           </p>
         </header>
+        <Raceboard players={[this.state.counter]}/>
         <button onClick={() => incrementCounter()}>Increment</button>
         <h2>{ this.state.counter }</h2>
       </div>

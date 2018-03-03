@@ -1,0 +1,11 @@
+import React from 'react';
+import renderer from 'react-test-renderer';
+import {{properCase name}} from '../index';
+
+describe('<{{properCase name}} />', () => {
+  it('matches snapshot', () => {
+    const actual = renderer.create(<{{properCase name}} />).toJSON();
+
+    expect(actual).toMatchSnapshot();
+  });
+});

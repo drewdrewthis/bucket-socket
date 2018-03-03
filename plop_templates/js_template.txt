@@ -1,0 +1,41 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import cx from 'classnames';
+import styles from './{{snakeCase name}}.module.scss';
+
+const {{properCase name}} = (props) => {
+  const {
+    children,
+    className,
+  } = props;
+
+  const classes = cx(
+    styles['{{dashCase name}}'],
+    className,
+  );
+
+  return (
+    <div className={classes}>
+      { children }
+    </div>
+  );
+};
+
+
+{{properCase name}}.propTypes = {
+  /**
+   * This prop will add a new className to any inherent classNames
+   * provided in the component's index.js file.
+   */
+  className: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ])
+};
+
+{{properCase name}}.defaultProps = {
+  // Place any default props here.
+};
+
+export default {{properCase name}};

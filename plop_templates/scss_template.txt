@@ -1,0 +1,3 @@
+.{{dashCase name}} {
+  // Place your component specific scss here.
+}

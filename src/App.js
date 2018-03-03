@@ -17,16 +17,17 @@ class App extends Component {
       timestamp: moment(timestamp).format('MMMM Do, YYYY - h:mm:ss')
     }));
 
-    subscribeToCounter((err, counter) => this.setState({
-      counter
+    subscribeToCounter((err, players) => this.setState({
+      players
     }));
 
     this.state = {
       timestamp: 'no timestamp yet',
-      counter: 0
+      players: []
     };
   }
   render() {
+    console.log(this.state.players);
     return (
       <div className="App">
         <header className="App-header">
@@ -39,7 +40,7 @@ class App extends Component {
             { this.state.timestamp }
           </p>
         </header>
-        <Raceboard players={[this.state.counter]}/>
+        <Raceboard players={this.state.players}/>
         <button onClick={() => incrementCounter()}>Increment</button>
         <h2>{ this.state.counter }</h2>
       </div>

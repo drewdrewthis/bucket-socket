@@ -17,23 +17,26 @@ const Raceboard = (props) => {
     className,
   );
 
-  const renderPlayer = (score) => (
-    <div className='player'>
-      <div
-        className='knob'
-        style={{
-          height: '40px',
-          width: '40px',
-          bottom: `calc(${Math.min(score * 1, 100)}% - 80px)`
-        }}
-      />
-    </div>
+  const renderPlayer = ({counter}) => (
+    <div className='lane'>
+      <div className='player'>
+        <div
+          className='knob'
+          style={{
+            height: '40px',
+            width: '40px',
+            bottom: `calc(${Math.min(counter * 5, 100)}% - 40px)`
+          }}
+        />
+      </div>
+  </div>
   )
 
   return (
     <div className={classes}>
-      I'm a raceboard
-      { players.map(renderPlayer) }
+      <div className='spread'>
+        { players.map(renderPlayer) }
+      </div>
     </div>
   );
 };

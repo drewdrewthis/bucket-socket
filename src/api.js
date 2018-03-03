@@ -7,7 +7,7 @@ function subscribeToTimer(cb) {
 }
 
 function subscribeToCounter(cb) {
-  socket.on('clientIncrement', counter => cb(null, counter));
+  socket.on('clientIncrement', players => cb(null, players));
   socket.emit('subscribeToCounter');
 }
 

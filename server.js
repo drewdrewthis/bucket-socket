@@ -1,7 +1,7 @@
 const io = require('socket.io')();
 var counter = 0;
 
-io.on('connection', (client) => {
+io.sockets.on('connection', (client) => {
   client.on('subscribeToTimer', (interval) => {
     console.log('client is subscribing to timer with interval ', interval);
     setInterval(() => {
@@ -9,14 +9,13 @@ io.on('connection', (client) => {
     }, interval);
   });
 
-  client.on('subscribeToCounter', (cb) => {
-    client.emit('clientIncrement', counter);
+  client.on('subscribeToCounter', () => {
     console.log('client is subscribing to counter, starting at:', counter);
   });
 
   client.on('incrementCounter', () => {
     counter++;
-    client.emit('clientIncrement', counter)
+    io.sockets.emit('clientIncrement', counter);
     console.log('client incremented counter', counter);
   })
 });

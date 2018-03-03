@@ -24,7 +24,7 @@ const Raceboard = (props) => {
         style={{
           height: '40px',
           width: '40px',
-          bottom: `calc(${Math.min(score * 1, 100)}% - 40px)`
+          bottom: `calc(${Math.min(score * 1, 100)}% - 80px)`
         }}
       />
     </div>

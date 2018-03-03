@@ -1,6 +1,5 @@
 import openSocket from 'socket.io-client';
 const socket = openSocket('http://localhost:8000');
-var counter = 0;
 
 function subscribeToTimer(cb) {
   socket.on('timer', timestamp => cb(null, timestamp));
@@ -12,8 +11,8 @@ function subscribeToCounter(cb) {
   socket.emit('subscribeToCounter');
 }
 
-function incrementCounter() {
-  socket.emit('incrementCounter', counter);
+function incrementCounter(cb) {
+  socket.emit('incrementCounter');
 }
 
 export { subscribeToTimer, subscribeToCounter, incrementCounter }

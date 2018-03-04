@@ -6,13 +6,23 @@ function subscribeToTimer(cb) {
   socket.emit('subscribeToTimer', 1000);
 }
 
-function subscribeToCounter(cb) {
-  socket.on('clientIncrement', players => cb(null, players));
-  socket.emit('subscribeToCounter');
+function subscribeToPlayers(cb) {
+  socket.on('updatePlayers', players => cb(null, players));
+  socket.emit('subscribeToPlayers');
+}
+
+function subscribeToUser(cb) {
+  socket.on('user', user => cb(null, user));
+  socket.emit('subscribeToUser');
 }
 
 function incrementCounter(cb) {
   socket.emit('incrementCounter');
 }
 
-export { subscribeToTimer, subscribeToCounter, incrementCounter }
+export {
+  subscribeToTimer,
+  subscribeToUser,
+  subscribeToPlayers,
+  incrementCounter
+}

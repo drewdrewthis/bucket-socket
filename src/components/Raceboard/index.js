@@ -17,7 +17,7 @@ const Raceboard = (props) => {
     className,
   );
 
-  const renderPlayer = ({counter}) => (
+  const renderPlayer = player => (
     <div className='lane'>
       <div className='player'>
         <div
@@ -25,9 +25,11 @@ const Raceboard = (props) => {
           style={{
             height: '40px',
             width: '40px',
-            bottom: `calc(${Math.min(counter * 5, 100)}% - 40px)`
+            bottom: `calc(${Math.min(player.counter * 5, 100)}% - 40px)`
           }}
-        />
+        >
+          {player.id}
+        </div>
       </div>
   </div>
   )

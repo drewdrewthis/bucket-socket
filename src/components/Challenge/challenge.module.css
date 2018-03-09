@@ -1,0 +1,5 @@
+.challenge {}
+
+#challenge .challenger {
+  position: relative;
+}

@@ -6,7 +6,6 @@ import './raceboard.module.css';
 
 const Raceboard = (props) => {
   const {
-    children,
     className,
     players = [1]
   } = props;

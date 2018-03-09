@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import moment from 'moment';
+import 'athenaeum/lib/assets/styles.css';
 import {
   subscribeToTimer,
   subscribeToPlayers,
@@ -9,6 +10,8 @@ import {
   incrementCounter,
 } from './api';
 import Raceboard from './components/Raceboard';
+import Challenge from './components/Challenge';
+import { Layout } from 'athenaeum';
 
 class App extends Component {
   constructor(props) {
@@ -46,19 +49,20 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
           <h2>Player {user.id}</h2>
           <p className="App-intro">
-            Current time on the server:
-          </p>
-          <p>
-            { timestamp }
+            { `Current time on the server: ${timestamp}` }
           </p>
         </header>
-        <Raceboard players={players}/>
-        <button onClick={() => incrementCounter()}>Increment</button>
-        <h2>{ user.counter }</h2>
-      </div>
+        <Layout largeCols={[6]}>
+          <Raceboard players={players}/>
+          <Challenge incrementCounter={(score) => {
+              incrementCounter();
+          }}
+        />
+      </Layout>
+      <h2>{ user.counter }</h2>
+    </div>
     );
   }
 }

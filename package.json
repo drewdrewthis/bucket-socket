@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "athenaeum": "^8.4.0",
+    "challenger": "^1.0.2",
     "classnames": "^2.2.5",
     "moment": "^2.21.0",
     "node-sass-chokidar": "^0.0.3",

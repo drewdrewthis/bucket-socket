@@ -5,7 +5,9 @@ import styles from './challenge.module.css';
 import challenger from 'challenger';
 import { Button } from 'athenaeum';
 import challenges from './challenges';
+import './challenge.module.scss';
 require('challenger/client/dist/challenger.min.css');
+
 
 class Challenge extends React.Component {
   onClick = () => {

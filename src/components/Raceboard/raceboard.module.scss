@@ -1,10 +1,12 @@
 .raceboard {
+  // Place your component specific scss here.
   background: green;
   background-color: green;
   width: 80%;
   height: 400px;
   margin: auto;
-  position: relative; }
+  position: relative;
+}
 
 .player {
   height: 100%;
@@ -13,7 +15,8 @@
   position: absolute;
   top: 0;
   transform: translateX(-50%);
-  left: 50%; }
+  left: 50%;
+}
 
 .knob {
   color: black;
@@ -28,14 +31,17 @@
   transition: bottom .5s;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+}
 
 .lane {
   position: relative;
   height: 100%;
-  width: 40px; }
+  width: 40px;
+}
 
 .spread {
   display: flex;
   height: 100%;
-  width: 100%; }
+  width: 100%;
+}

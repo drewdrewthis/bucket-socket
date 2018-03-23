@@ -19,7 +19,7 @@
   "scripts": {
     "reset": "rm -rf node_modules && yarn",
     "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "yarn build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "watch-css": "yarn build-css && node-sass-chokidar -w src/ -o src/ --watch --recursive",
     "cc": "yarn plop create-component",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 // import styles from './raceboard.module.scss';
-import './raceboard.module.css';
+import './raceboard.module.scss';
 
 const Raceboard = (props) => {
   const {
